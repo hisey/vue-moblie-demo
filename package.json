@@ -1,0 +1,108 @@
+{
+  "name": "m_b_991kang",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:test": "vue-cli-service build --mode test",
+    "build:dev": "vue-cli-service build --mode development",
+    "lint": "vue-cli-service lint",
+    "deploy:dev": "node build/build.js && gulp deploy-dev",
+    "esfix": "eslint --ext .js --ext .vue --ext .jsx --fix ./src"
+  },
+  "dependencies": {
+    "babel-plugin-import": "^1.12.0",
+    "core-js": "^2.6.5",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "lib-flexible": "^0.3.2",
+    "postcss-pxtorem": "^4.0.1",
+    "url-loader": "^2.1.0",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-plugin-eslint": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "amfe-flexible": "^2.2.1",
+    "axios": "^0.19.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "lrz": "^4.9.40",
+    "store": "^2.0.12",
+    "vant": "^2.0.8",
+    "vue-baidu-map": "^0.21.22",
+    "vue-clipboard2": "^0.3.0",
+    "vue-router": "^3.0.7",
+    "vue-template-compiler": "^2.6.10",
+    "vuex": "^3.1.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "browser": true,
+      "es6": true
+    },
+    "plugins": [
+      "html"
+    ],
+    "extends": "plugin:vue/base",
+    "parserOptions": {
+      "sourceType": "module",
+      "parser": "babel-eslint"
+    },
+    "globals": {
+      "$": true,
+      "lib": true,
+      "_hmt": true,
+      "platformInfo": true,
+      "wx": true,
+      "utils": true
+    },
+    "rules": {
+      "comma-spacing": 0,
+      "keyword-spacing": 0,
+      "no-cond-assign": 2,
+      "no-constant-condition": 2,
+      "no-dupe-args": 2,
+      "no-dupe-keys": 2,
+      "no-duplicate-case": 2,
+      "no-empty": 2,
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        0,
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "double"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "no-unused-vars": [
+        2,
+        {
+          "args": "none"
+        }
+      ]
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
