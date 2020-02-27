@@ -4,7 +4,7 @@ import {
   UPDATA_LOADING,
   UPDATA_COMTY_INFO
 } from "../mutation-types.js";
-import register from "@/services/register";
+// import register from "@/services/register";
 
 const app = {
   state: {
@@ -25,22 +25,22 @@ const app = {
       state.loading = loading;
     }
   },
-  actions: {
-    UPDATE_USERINFO({
-      commit,
-    }, user) {
-      return register.userInfo({
-        uid: user.uid,
-        userId: user.id || user.userId
-      }).then(res => {
-        if (res.status == 200 && res.data) {
-          let userInfo = res.data;
-          commit(UPDATA_USER_INFO, userInfo);
-          return userInfo;
-        }
-      });
-    }
-  }
+  // actions: {
+  //   UPDATE_USERINFO({
+  //     commit,
+  //   }, user) {
+  //     return register.userInfo({
+  //       uid: user.uid,
+  //       userId: user.id || user.userId
+  //     }).then(res => {
+  //       if (res.status == 200 && res.data) {
+  //         let userInfo = res.data;
+  //         commit(UPDATA_USER_INFO, userInfo);
+  //         return userInfo;
+  //       }
+  //     });
+  //   }
+  // }
 };
 
 export default app;

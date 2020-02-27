@@ -48,9 +48,14 @@ Vue.use(VueClipboard);
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key]);
 });
+// new Vue({
+//   router,
+//   store,
+//   el: "#app",
+//   render: h => h(App)
+// }).$mount("#app");
 new Vue({
   router,
   store,
-  el: "#app",
   render: h => h(App)
 }).$mount("#app");
