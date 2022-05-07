@@ -16,20 +16,20 @@ interface Res {
 }
 const get15DaysWeatherByArea = (data: Req) => {
   return request<Req, Res>({
-    url: "/common/weather/get15DaysWeatherByArea",
-    method: "GET",
+    url: '/common/weather/get15DaysWeatherByArea',
+    method: 'GET',
     data,
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
     interceptors: {
       requestInterceptors(res) {
-        console.log("接口请求拦截");
+        console.log('接口请求拦截');
 
         return res;
       },
       responseInterceptors(result) {
-        console.log("接口响应拦截");
+        console.log('接口响应拦截');
         return result;
       },
     },
@@ -37,8 +37,8 @@ const get15DaysWeatherByArea = (data: Req) => {
 };
 onMounted(async () => {
   const res = await get15DaysWeatherByArea({
-    apiKey: "t2EwWmG1e11a47daca54b794a0bbf88483e27456665ee61",
-    area: "北京市",
+    apiKey: 't2EwWmG1e11a47daca54b794a0bbf88483e27456665ee61',
+    area: '北京市',
   });
   console.log(res);
 });
@@ -118,7 +118,8 @@ onMounted(async () => {
     flex: 1;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 0; /* hack for flex box ellipsis */
+    min-width: 0;
+    /* hack for flex box ellipsis */
     min-height: var(--van-card-thumb-size);
 
     &--centered {
