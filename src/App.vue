@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
-import request from "@/utils/http";
-import { onMounted } from "vue";
+import { RouterLink, RouterView } from 'vue-router';
+import request from '@/utils/http';
+import svgIcon from '@/components/Icon/SvgIcon.vue';
+import { onMounted } from 'vue';
 interface Req {
   apiKey: string;
   area?: string;
@@ -19,20 +19,20 @@ const get15DaysWeatherByArea = (data: Req) => {
     url: '/common/weather/get15DaysWeatherByArea',
     method: 'GET',
     data,
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    interceptors: {
-      requestInterceptors(res) {
-        console.log('接口请求拦截');
+    // headers: {
+    //   'Content-Type': 'application/x-www-form-urlencoded',
+    // },
+    // interceptors: {
+    //   requestInterceptors(res) {
+    //     console.log('接口请求拦截');
 
-        return res;
-      },
-      responseInterceptors(result) {
-        console.log('接口响应拦截');
-        return result;
-      },
-    },
+    //     return res;
+    //   },
+    //   responseInterceptors(result) {
+    //     console.log('接口响应拦截');
+    //     return result;
+    //   },
+    // },
   });
 };
 onMounted(async () => {
@@ -47,10 +47,8 @@ onMounted(async () => {
 <template>
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
+    <svgIcon name="test" :size="32"/>
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -62,8 +60,8 @@ onMounted(async () => {
 </template>
 
 <style lang="less">
-@import "@/style/base.css";
-@import "@/style/var.less";
+@import '@/style/base.css';
+@import '@/style/var.less';
 
 :root {
   --van-card-padding: @card-padding;

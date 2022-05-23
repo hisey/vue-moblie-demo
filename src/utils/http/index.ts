@@ -1,9 +1,9 @@
-import Request from './request'
+import Request from './request';
 import type {
-    RequestConfig,
-    // RequestInterceptors,
-    // CancelRequestSource,
-  } from './types'
+  RequestConfig,
+  // RequestInterceptors,
+  // CancelRequestSource,
+} from './types';
 
 const request = new Request({
   baseURL: import.meta.env.BASE_URL,
@@ -11,26 +11,26 @@ const request = new Request({
   interceptors: {
     // 请求拦截器
     requestInterceptors: (config) => {
-      console.log('实例请求拦截器')
+      console.log('实例请求拦截器');
 
-      return config
+      return config;
     },
     // 响应拦截器
     responseInterceptors: (result) => {
-      console.log('实例响应拦截器')
-      return result
+      console.log('实例响应拦截器');
+      return result;
     },
   },
-})
+});
 
 // import type { RequestConfig } from './types'
 interface YWZRequestConfig<T> extends RequestConfig {
-  data?: T
+  data?: T;
 }
 interface YWZResponse<T> {
-  code: number
-  message: string
-  data: T
+  code: number;
+  message: string;
+  data: T;
 }
 
 /**
@@ -41,11 +41,11 @@ interface YWZResponse<T> {
  * @returns {Promise}
  */
 const ywzRequest = <D, T = any>(config: YWZRequestConfig<D>) => {
-  const { method = 'GET' } = config
+  const { method = 'GET' } = config;
   if (method === 'get' || method === 'GET') {
-    config.params = config.data
+    config.params = config.data;
   }
-  return request.request<YWZResponse<T>>(config)
-}
+  return request.request<YWZResponse<T>>(config);
+};
 
-export default ywzRequest
+export default ywzRequest;
